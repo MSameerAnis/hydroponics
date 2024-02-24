@@ -5,8 +5,6 @@ import { useState,useEffect } from 'react';
 const Reading = () => {
 
   const [data,setData] =  useState([]);
-  const [filteredEntries, setFilteredEntries] = useState([]);
-  const [filterValue, setFilterValue] = useState('');
 
 
   const fetchData= async ()=>{
@@ -31,17 +29,7 @@ const Reading = () => {
     fetchData();
   },[])
 
-  useEffect(() => {
-    // Filter entries based on filterValue
-    const filtered = data.filter(entry =>
-      entry.type.toLowerCase().includes(filterValue.toLowerCase())
-    );
-    setFilteredEntries(filtered);
-  }, [data, filterValue]);
 
-  const handleFilterChange = event => {
-    setFilterValue(event.target.value);
-  };
 
 
 
@@ -50,15 +38,6 @@ const Reading = () => {
     <div className="container mx-auto p-4">
     <h1 className="text-3xl   text-blue-950  mb-4 font-semibold"> NFT System Reading</h1>
 
-    <div className="mb-4">
-        <input
-          type="text"
-          placeholder="Filter by Type"
-          value={filterValue}
-          onChange={handleFilterChange}
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-        />
-      </div>
 
     <div className="overflow-x-auto">
       <table className=" min-w-full table-auto border border-gray-300">
