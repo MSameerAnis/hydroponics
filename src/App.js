@@ -15,9 +15,12 @@ function App() {
     
     <div >
 
+
 <Navbar />
 
+
 <Routes>  
+
 
   <Route path='home'element={<Home />} />
 

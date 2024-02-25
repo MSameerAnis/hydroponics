@@ -1,7 +1,22 @@
 import React from 'react'
+import { useState } from 'react'
 
 
 const Contact = () => {
+
+  const [name,setName ]=useState('');
+  const [email,setEmail]=useState('');
+  const [message,setMeassage]=useState();
+
+
+
+
+
+
+
+
+  
+  
   return (
     <div
      name="contact"
@@ -25,12 +40,19 @@ const Contact = () => {
             method='POST'
              className=' flex flex-col gap-8 justify-center  items-center'>
 
-                       <input  name ='name'type="text" placeholder='Name ' className='p-4 rounded-2xl bg-transparent   border-2  border-blue-950 text-blue-950  focus:outline-none  w-3/4' />
+                       <input  name ='name'
+                       type="text" placeholder='Name ' 
+                       value={name}
+                       onChange={(e)=>{setName(e.target.value)}}
+                       
+                       className='p-4 rounded-2xl bg-transparent   border-2  border-blue-950 text-blue-950  focus:outline-none  w-3/4' />
 
 
                 <input type="email" 
                  placeholder='email'
                  name='email' 
+                 value={email}
+                 onChange={(e)=>{setEmail(e.target.value)}}
                  className=' p-4 rounded-2xl bg-transparent   border-2  border-blue-950 text-blue-950  focus:outline-none w-3/4  ' />
 
 
@@ -42,6 +64,8 @@ const Contact = () => {
                 <textarea
 
                 name='textarea'
+                value={message}
+                onChange={(e)=>{setMeassage(e.target.value)}}
                 
                 
                 placeholder='Message ' id="" cols="30" rows="10" className='p-4 rounded-2xl bg-transparent   border-2  border-blue-950 text-blue-950  focus:outline-none  w-3/4'></textarea>

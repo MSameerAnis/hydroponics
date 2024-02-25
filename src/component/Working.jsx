@@ -25,7 +25,7 @@ const Working = () => {
             para:(
                 <>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                pH levels in hydroponic solutions affect nutrient availability to plants. Maintaining the pH ensures that essential nutrients remain soluble to plants.
                 </p>
                 </>
             ),
@@ -42,7 +42,7 @@ const Working = () => {
             para:(
                 <>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                Temperature influences various physiological processes in plants, including nutrient uptake, metabolic activity, and transpiration rates.
                 </p>
                 </>
             ),
@@ -70,7 +70,7 @@ const Working = () => {
             para:(
                 <>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                Light is essential for photosynthesis, providing energy for plant growth and development in hydroponic systems.
                 </p>
                 </>
             ),

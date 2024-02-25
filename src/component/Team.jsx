@@ -66,7 +66,8 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                        
+                    provided crucial technical expertise and problem-solving skills, ensuring the efficient design and functionality of your smart hydroponics management system, while also contributing to user experience refinement and quality assurance efforts.
                     </p>
                 </>
             ),
@@ -94,7 +95,7 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+             implementing the server-side infrastructure, databases, and APIs, ensuring seamless communication between the hydroponics system's frontend interface and hardware components.  
                     </p>
                 </>
             ),
@@ -123,7 +124,8 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                        
+                  Responsible for  designing, prototyping, and optimizing the physical components of the hydroponics management system, including sensors, actuators, and control circuits, ensuring they met performance requirements and interfaced effectively with the software backend.
                     </p>
                 </>
             ),
@@ -153,7 +155,7 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                    esponsible for crafting the user interface and experience of the hydroponics management system, translating design concepts into functional and visually appealing interfaces that facilitate user interaction and accessibility
                     </p>
                 </>
             ),
@@ -182,7 +184,7 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repudiandae sit nostrum fugit optio! Itaque!
+                    Responsible for  quality and reliability of the system while also overseeing the implementation of hardware components, ensuring seamless integration and optimal performance. 
                     </p>
                 </>
             ),
@@ -246,10 +248,10 @@ const Team = () => {
 
                                         <div className='  p-4 flex flex-col justify-center items-center gap-0 md:gap-4 '>
 
-                                            <h4 className='text-sm text-center  font-bold'>{name}</h4>
+                                            <h4 className='text-sm capitalize text-center  font-bold'>{name}</h4>
                                             <p className=' text-sm   font-semibold'>{roll}</p>
                                             <p className=''>{Title}</p>
-                                            <p className='text-lg text-center'>{para}</p>
+                                            <p className= ' mt-4 capitalize text-lg   text-center'>{para}</p>
 
                                             
 

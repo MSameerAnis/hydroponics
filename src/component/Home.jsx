@@ -1,13 +1,15 @@
 import React from 'react'
 import {AiOutlineArrowRight} from "react-icons/ai"
 import homeImg from '../assets/homeImage.jpg'
-import { useNavigate } from 'react-router-dom'
+
+
+
 
 const Home = () => {
 
 
 
-  const navigate = useNavigate();
+ 
 
   return (
     <div name="home"   className='   h-screen   py-20 w-full  bg-gradient-to-b  
@@ -60,15 +62,21 @@ const Home = () => {
      
 
         <div className='px-4  '>
-                    <button className='text-white w-fit px-6  py-3 my-6 flex items-center rounded-md capitalize bg-gradient-to-r
-                     from-cyan-500 to-blue-800 cursor-pointer group  gap-4 '
-                     
-                     onClick={()=>navigate('reading')}>
-                       Download Project Report 
-                        <span className='group-hover:rotate-90 duration-300'>
-                            <AiOutlineArrowRight size={20}/>
-                        </span>
-                    </button>
+        <button
+  className='text-white w-fit px-6 py-3 my-6 flex items-center rounded-md capitalize bg-gradient-to-r from-cyan-500 to-blue-800 cursor-pointer group gap-4'
+  onClick={() => {
+    const link = document.createElement('a');
+    link.href = require('../assets/research.pdf');
+    link.download = 'Project_Report.pdf';
+    link.click();
+  }}
+>
+ Research Paper
+  <span className='group-hover:rotate-90 duration-300'>
+    <AiOutlineArrowRight size={20}/>
+  </span>
+</button>
+
                 </div>
       </div>
 

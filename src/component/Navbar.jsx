@@ -122,7 +122,7 @@ const Navbar = () => {
                     <>
                         <ul className=' w-full h1/2 fixed flex flex-col py-5 gap-7 
                            items-center justify-center  top-0 
-                          left-[100px]  h-screen  bg-white  
+                           h-screen  bg-white  
                              transition-all duration-500 ease-in '>
 
                             {
