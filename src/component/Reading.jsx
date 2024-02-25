@@ -4,6 +4,7 @@ const Reading = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState('');
   const [dateTimeFilter, setDateTimeFilter] = useState('');
+  const [deviceFilter, setDeviceFilter] = useState('');
   const [loadind , setLoading]= useState(false);
 
 
@@ -25,7 +26,14 @@ const Reading = () => {
   const filteredData = data.filter(entry => {
     const typeMatch = filter ? entry.type.toLowerCase() === filter.toLowerCase() : true;
     const dateTimeMatch = dateTimeFilter ? entry.created.includes(dateTimeFilter) : true;
-    return typeMatch && dateTimeMatch;
+    const deviceMatch = deviceFilter ? entry.device_id.includes(deviceFilter) : true;
+    return typeMatch && dateTimeMatch&& deviceMatch;
+
+
+    
+
+
+
   });
 
   if(!loadind) return <p className=' text-center text-3xl mt-80 font-semibold  text-blue-900'>Loading....</p>
@@ -75,8 +83,9 @@ const Reading = () => {
         >
           Humidity
         </button>
+     
         <button
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 mb-2 ${
             filter !== '' ? 'mb-2' : '' // Add margin bottom if there is a filter applied
           } bg-gray-300 text-gray-700`}
           onClick={() => setFilter('')}
@@ -84,7 +93,7 @@ const Reading = () => {
           Clear Type Filter
          </button>
          <button
-          className={`ml-2  px-4 py-2 ${
+          className={`ml-2 mb-2  px-4 py-2 ${
             filter === 'lightstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('lightstatus')}
@@ -93,7 +102,7 @@ const Reading = () => {
         </button>
        
         <button
-          className={`mr-2  mt-2 px-4 py-2 ${
+          className={`ml-2   px-4 py-2 ${
             filter === 'pumpstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('pumpstatus')}
@@ -106,27 +115,48 @@ const Reading = () => {
         <input
           type="text"
           placeholder="(YYYY-MM-DDThh:mm:ss)"
-          className="px-4 py-2 border border-gray-300 rounded-md"
+          className="px-4 mb-2 py-2 border border-gray-300 rounded-md"
           value={dateTimeFilter}
           onChange={e => setDateTimeFilter(e.target.value)}
         />
+           <input
+          type="text"
+          placeholder="Device0 ID"
+          className=" ml-2  mb-2  px-4 py-2 border border-gray-300 rounded-md"
+          value={deviceFilter}
+          onChange={e => setDeviceFilter(e.target.value)}
+        />
+        
+        {/* Clear button for device filter */}
+        <button
+          className={`px-4 py-2 mb-2 ${
+            deviceFilter !== '' ? 'mb-2' : '' 
+          } bg-gray-300 text-gray-700`}
+          onClick={() => setDeviceFilter('')}
+        >
+          Clear Device Filter
+        </button>
       </div>
 
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border border-gray-300">
           <thead className="bg-gray-200">
             <tr>
+            <th className="py-2 px-4 border">Device id</th>
               <th className="py-2 px-4 border">Type</th>
               <th className="py-2 px-4 border">Value</th>
               <th className="py-2 px-4 border">Created</th>
+             
             </tr>
           </thead>
           <tbody>
             {filteredData.map(entry => (
               <tr key={entry.id}>
+                 <td className="py-2 px-2 text-center border">{entry.device_id}</td>
                 <td className="py-2 px-2 text-center text-blue-950 font-bold border">{entry.type}</td>
                 <td className="py-2 px-2 text-center border">{entry.value}</td>
                 <td className="py-2 px-2 text-center border">{entry.created}</td>
+               
               </tr>
             ))}
           </tbody>
