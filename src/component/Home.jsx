@@ -67,7 +67,7 @@ const Home = () => {
   onClick={() => {
     const link = document.createElement('a');
     link.href = require('../assets/research.pdf');
-    link.download = 'Project_Report.pdf';
+    link.download = 'Research-paper.pdf';
     link.click();
   }}
 >

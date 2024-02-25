@@ -155,7 +155,7 @@ const Team = () => {
             para: (
                 <>
                     <p>
-                    esponsible for crafting the user interface and experience of the hydroponics management system, translating design concepts into functional and visually appealing interfaces that facilitate user interaction and accessibility
+                    responsible for crafting the user interface and experience of the hydroponics management system, translating design concepts into functional and visually appealing interfaces that facilitate user interaction and accessibility
                     </p>
                 </>
             ),

@@ -4,12 +4,15 @@ const Reading = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState('');
   const [dateTimeFilter, setDateTimeFilter] = useState('');
+  const [loadind , setLoading]= useState(false);
+
 
   const fetchData = async () => {
     try {
       const response = await fetch('https://fypapi-haziq059321s-projects.vercel.app/api/data/getData');
       const data = await response.json();
       setData(data);
+      setLoading(true)
     } catch (error) {
       console.log('Error fetching data:', error);
     }
@@ -25,9 +28,11 @@ const Reading = () => {
     return typeMatch && dateTimeMatch;
   });
 
+  if(!loadind) return <p className=' text-center text-3xl mt-80 font-semibold  text-blue-900'>Loading....</p>
+
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl text-blue-950 mb-4 font-semibold">NFT System Reading</h1>
+      <h1 className=" text-center   text-3xl text-blue-950 mb-4 font-semibold">NFT System Reading</h1>
 
       <div className="flex flex-wrap justify-center mb-4">
         <button
@@ -79,7 +84,7 @@ const Reading = () => {
           Clear Type Filter
          </button>
          <button
-          className={`mr-2 mb-2 px-4 py-2 ${
+          className={`mr-2 mt-2 px-4 py-2 ${
             filter === 'lightstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('lightstatus')}
@@ -88,7 +93,7 @@ const Reading = () => {
         </button>
        
         <button
-          className={`mr-2 mb-2 px-4 py-2 ${
+          className={`mr-2  mt-2 px-4 py-2 ${
             filter === 'pumpstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('pumpstatus')}
