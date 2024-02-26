@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MdOutlineDelete } from "react-icons/md";
 
 const Reading = () => {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ const Reading = () => {
 
   });
 
-  if(!loadind) return <p className=' text-center text-3xl mt-80 font-semibold  text-blue-900'>Loading....</p>
+  if(!loadind) return <p className=' text-center text-3xl mt-60 font-semibold  text-blue-900'>Loading....</p>
 
   return (
     <div className="container mx-auto p-4">
@@ -45,7 +46,7 @@ const Reading = () => {
       <div className="flex flex-wrap justify-center mb-4">
         <button
           className={`mr-2 mb-2 px-4 py-2 ${
-            filter === 'ph' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'ph' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('ph')}
         >
@@ -53,7 +54,7 @@ const Reading = () => {
         </button>
         <button
           className={`mr-2 mb-2 px-4 py-2 ${
-            filter === 'tds' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'tds' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('tds')}
         >
@@ -61,7 +62,7 @@ const Reading = () => {
         </button>
         <button
           className={`mr-2 mb-2 px-4 py-2 ${
-            filter === 'temperature' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'temperature' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('temperature')}
         >
@@ -69,7 +70,7 @@ const Reading = () => {
         </button>
         <button
           className={`mr-2 mb-2 px-4 py-2 ${
-            filter === 'fanstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'fanstatus' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('fanstatus')}
         >
@@ -77,24 +78,17 @@ const Reading = () => {
         </button>
         <button
           className={`  mr-2 mb-2 px-4 py-2 ${
-            filter === 'humidity' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'humidity' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('humidity')}
         >
           Humidity
         </button>
      
-        <button
-          className={`px-4 py-2 mb-2 ${
-            filter !== '' ? 'mb-2' : '' // Add margin bottom if there is a filter applied
-          } bg-gray-300 text-gray-700`}
-          onClick={() => setFilter('')}
-        >
-          Clear Type Filter
-         </button>
+ 
          <button
           className={`ml-2 mb-2  px-4 py-2 ${
-            filter === 'lightstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+            filter === 'lightstatus' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('lightstatus')}
         >
@@ -102,13 +96,21 @@ const Reading = () => {
         </button>
        
         <button
-          className={`ml-2   px-4 py-2 ${
-            filter === 'pumpstatus' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+          className={`ml-2 mb-2   px-4 py-2 ${
+            filter === 'pumpstatus' ? 'bg-gradient-to-r from-cyan-500 to-blue-800 text-white' : 'bg-gray-300 text-gray-700'
           }`}
           onClick={() => setFilter('pumpstatus')}
         >
           Pump Status
         </button>
+        <button
+          className={` ml-2  px-4 py-2 mb-2 flex justify-evenly gap-3 items-center ${
+            filter !== '' ? 'mb-2' : '' 
+          } bg-red-300 text-gray-700`}
+          onClick={() => setFilter('')}
+        >
+          Clear Type  <MdOutlineDelete />
+         </button>
       </div>
 
       <div className="mb-4">
@@ -129,23 +131,23 @@ const Reading = () => {
         
         {/* Clear button for device filter */}
         <button
-          className={`px-4 py-2 mb-2 ml-2 ${
+          className={`px-4 py-2 mb-2 ml-2 flex justify-center items-center gap-2 ${
             deviceFilter !== '' ? 'mb-2' : '' 
-          } bg-gray-300 text-gray-700`}
+          } bg-red-300 text-gray-700`}
           onClick={() => setDeviceFilter('')}
         >
-          Clear Device Filter
+          Clear Device<MdOutlineDelete />
         </button>
       </div>
 
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border border-gray-300">
-          <thead className="bg-gray-200">
+          <thead className="bg-blue-300">
             <tr>
-            <th className="py-2 px-4 border">Device id</th>
+            <th className="py-2 px-4 border">Device</th>
               <th className="py-2 px-4 border">Type</th>
               <th className="py-2 px-4 border">Value</th>
-              <th className="py-2 px-4 border">Created</th>
+              <th className="py-2 px-4 border">Date & Time</th>
              
             </tr>
           </thead>

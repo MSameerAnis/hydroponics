@@ -251,7 +251,7 @@ const Team = () => {
                                             <h4 className='text-sm capitalize text-center  font-bold'>{name}</h4>
                                             <p className=' text-sm   font-semibold'>{roll}</p>
                                             <p className=''>{Title}</p>
-                                            <p className= ' mt-4 capitalize text-lg   text-center'>{para}</p>
+                                            <p className= ' mt-4 capitalize text-sm  text-center'>{para}</p>
 
                                             
 

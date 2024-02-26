@@ -20,7 +20,7 @@ const Contact = () => {
   return (
     <div
      name="contact"
-    className=' w-full  h-3/4 bg-gradient-to-b 
+    className=' w-full  h-screen bg-gradient-to-b 
 
      flex justify-center items-center  flex-col
     
